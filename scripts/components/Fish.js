@@ -1,16 +1,19 @@
 import React from 'react';
+import autobind from 'autobind-decorator';
 import helpers from '../helpers';
 
 /*
   Fish Menu Item
 */
 
-var Fish = React.createClass({
-  onButtonClick: function(event){
+@autobind
+class Fish extends React.Component {
+  onButtonClick() {
     var key = this.props.index;
     this.props.addToOrder(key);
-  },
-  render: function(){
+  }
+
+  render() {
     var details = this.props.details;
     var isAvailable = details.status === 'available';
     var buttonText = (isAvailable ? 'Add To Order' : 'Sold Out!');
@@ -25,12 +28,7 @@ var Fish = React.createClass({
         <button disabled={!isAvailable} onClick={this.onButtonClick}>{buttonText}</button>
       </li>
     )
-  },
-  propTypes: {
-    index: React.PropTypes.string,
-    details: React.PropTypes.object,
-    addToOrder: React.PropTypes.func
   }
-});
+}
 
 export default Fish;
