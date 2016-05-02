@@ -3,7 +3,6 @@ import CSSTransitionGroup from 'react-addons-css-transition-group';
 import autobind from 'autobind-decorator';
 import helpers from '../helpers';
 
-
 /*
   Current Order
 */

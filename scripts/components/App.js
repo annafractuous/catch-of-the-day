@@ -94,7 +94,7 @@ class App extends React.Component {
           </ul>
         </div>
         <Order fishes={this.state.fishes} order={this.state.order} removeFromOrder={this.removeFromOrder}/>
-        <Inventory fishes={this.state.fishes} addFish={this.addFish} removeFish={this.removeFish} loadSamples={this.loadSamples} linkState={this.linkState.bind(this)}/>
+        <Inventory fishes={this.state.fishes} addFish={this.addFish} removeFish={this.removeFish} loadSamples={this.loadSamples} linkState={this.linkState.bind(this)} {...this.props}/>
       </div>
     )
   }
